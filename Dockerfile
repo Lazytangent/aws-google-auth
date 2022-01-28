@@ -1,10 +1,10 @@
-FROM alpine:3.5
+FROM python:3.7-alpine
 
 RUN apk add --update-cache py3-pip ca-certificates py3-certifi py3-lxml\
                            python3-dev cython cython-dev libusb-dev build-base \
                            eudev-dev linux-headers libffi-dev openssl-dev \
                            jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev \
-                           tiff-dev tk-dev tcl-dev
+                           tiff-dev tk-dev tcl-dev libxml2-dev libxslt-dev
 
 COPY setup.py README.rst requirements.txt /build/
 RUN pip3 install -r /build/requirements.txt
